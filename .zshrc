@@ -59,7 +59,13 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  tmux
   git
+  docker
+  #vi-mode
+  #z
+  stack
+  npm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -93,4 +99,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval "$(nodenv init -)"
+alias gcd='git checkout development'
+alias grbd='git rebase development'
+alias gcld='git checkout lt-development'
+alias grbld='git rebase lt-development'
+alias cls='clear screen'
+alias grl='g log --oneline --first-parent'
+alias ag='ag --path-to-ignore ~/.ignore'
+
+#eval "$(nodenv init -)"
+#export NVM_DIR="$HOME/.config/.nvm"
+  #. "/usr/local/opt/nvm/nvm.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

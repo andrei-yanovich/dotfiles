@@ -12,6 +12,7 @@ fi
 
 echo "*** Configurating dnsmasq..."
 echo 'address=/.dev/0.0.0.0' > $(brew --prefix)/etc/dnsmasq.conf
+echo 'address=/.local/0.0.0.0' >> $(brew --prefix)/etc/dnsmasq.conf
 
 echo "*** Installing dnsmasq into LaunchDaemons..."
 sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons
